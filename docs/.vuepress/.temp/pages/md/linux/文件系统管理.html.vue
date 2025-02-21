@@ -1,0 +1,188 @@
+<template><div><h1 id="文件系统管理" tabindex="-1"><a class="header-anchor" href="#文件系统管理"><span>文件系统管理</span></a></h1>
+<h2 id="分区和文件系统" tabindex="-1"><a class="header-anchor" href="#分区和文件系统"><span>分区和文件系统</span></a></h2>
+<ul>
+<li>主分区:总共最多只能分四个</li>
+<li>扩展分区:只能有一个，也算作主分区的一种，也就是说主分区加扩展分区最多有四个。但是扩展分区不能存储数据和格式化，必须再划分成逻辑分区才能使用。</li>
+<li>逻辑分区:逻辑分区是在扩展分区中划分的，如果是IDE硬盘，Linux最多 支持59个逻辑分区，如果是SCSI硬盘Linux最多支持11个逻辑分区</li>
+</ul>
+<p><img src="@source/md/linux/images/文件系统管理/image.png" alt="alt text"></p>
+<table>
+<thead>
+<tr>
+<th>分区的设备文件名</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主分区1</td>
+<td>/dev/sdal</td>
+</tr>
+<tr>
+<td>主分区2</td>
+<td>/dev/sda2</td>
+</tr>
+<tr>
+<td>主分区3</td>
+<td>/dev/sda3</td>
+</tr>
+<tr>
+<td>扩展分区</td>
+<td>/dev/sda4</td>
+</tr>
+<tr>
+<td>逻辑分区1</td>
+<td>/dev/sda5</td>
+</tr>
+<tr>
+<td>逻辑分区2</td>
+<td>/dev/sda6</td>
+</tr>
+<tr>
+<td>逻辑分区3</td>
+<td>/dev/sda7</td>
+</tr>
+</tbody>
+</table>
+<p><img src="@source/md/linux/images/文件系统管理/image-1.png" alt="alt text"></p>
+<table>
+<thead>
+<tr>
+<th>分区的设备文件名</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主分区1</td>
+<td>/dev/sdal</td>
+</tr>
+<tr>
+<td>扩展分区</td>
+<td>/dev/sda2</td>
+</tr>
+<tr>
+<td>逻辑分区1</td>
+<td>/dev/sda5</td>
+</tr>
+<tr>
+<td>逻辑分区2</td>
+<td>/dev/sda6</td>
+</tr>
+<tr>
+<td>逻辑分区3</td>
+<td>/dev/sda7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件系统" tabindex="-1"><a class="header-anchor" href="#文件系统"><span>文件系统</span></a></h2>
+<ul>
+<li>ext2:是ext文 件系统的升级版本，Red Hat Linux7.2版本以前的系统默认都是ext2文件系统。1993年发布，最大支持16TB的分区和最大2TB的文件(1TB= 1024GB= 1024*1024MB )</li>
+<li>ext3: ext3文 件系统是ext2文件系统的升级版本，最大的区别就是带日志功能，以在系统突然停止时提高文件系统的可靠性支持最大16TB的分区和最大2TB的文件。</li>
+<li>ext4:它是ext3文件系统的升级版。ext4 在性能、伸缩性和可靠性方面进行了大量改进。EXT4的变化可以说是翻天覆地的，比如向下兼容EXT3、最大1EB文件系统和16TB文件、无限数量子目录、Extents连续数据块概念、多块分配、延迟分配、持久预分配、快速FSCK、日志校验、无日志模式、在线碎片整理、inode增 强、默认启用barrier等。是CentOS 6.3的默认文件系统( 1EB= 1024PB= 1024*1024TB )</li>
+</ul>
+<h2 id="文件系统常用命令" tabindex="-1"><a class="header-anchor" href="#文件系统常用命令"><span>文件系统常用命令</span></a></h2>
+<p>文件系统查看命令<code v-pre>df [选项] [挂载点]</code>
+选项:</p>
+<ol>
+<li>-a：显示所有的文件系统信息，包括特殊文件系统，如/proc、/sysfs</li>
+<li>-h ：使用习惯单位显示容量，如KB，MB或GB等</li>
+<li>-T：显示文件系统类型</li>
+<li>-m：以MB为单位显示容量</li>
+<li>-k：以KB为单位显示容量。默认就是以KB为单位</li>
+</ol>
+<p>统计目录或文件大小<code v-pre>du [选项][目录或文件名]</code>
+选项:</p>
+<ol>
+<li>-a：显示每个子文件的磁盘占用量。默认只统计子目录的磁盘占用量</li>
+<li>-h：使用习惯单位显示磁盘占用量，如KB，MB或GB等</li>
+<li>-S：统计总占用量，而不列出子目录和子文件的占用量
+<ul>
+<li>df命令是从文件系统考虑的，不光要考虑文件占用的空间，还要统计被命令或程序占用的空间(最常见的就是文件已经删除，但是程序并没有释放空间)</li>
+<li>du命令是面向文件的，只会计算文件或目录占用的空间</li>
+</ul>
+</li>
+</ol>
+<p>文件系统修复命令（开机自动）<code v-pre>fsck [选项]分区设备文件名</code>
+选项:</p>
+<ol>
+<li>-a:不用显示用户提示，自动修复文件系统</li>
+<li>-y:自动修复。和-a作用一-致，不过有些文件系统只支持-y</li>
+</ol>
+<p>显示磁盘状态命令<code v-pre>dumpe2fs 分区设备文件名</code></p>
+<h2 id="挂载命令格式" tabindex="-1"><a class="header-anchor" href="#挂载命令格式"><span>挂载命令格式</span></a></h2>
+<p><code v-pre>[root@localhost ~]# mount [-t文件统][-L卷标名] [-o特殊选项] 设备文件名挂载点</code>
+选项:</p>
+<ul>
+<li>-t文件系统：加入文件系统类型来指定挂载的类型，可以ext3、ext4、iso9660等文件系统</li>
+<li>-L卷标名：挂载指定卷标的分区，而不是安装设备文件名挂载</li>
+<li>-0特殊选项：可以指定挂载的额外选项</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>atime/noatime</td>
+<td>更新访问时间不更新访问时间。访问分区文件时，是否更新文件的访问时间，默认为更新</td>
+</tr>
+<tr>
+<td>async/sync</td>
+<td>异步/同步，默认为异步</td>
+</tr>
+<tr>
+<td>auto/noauto</td>
+<td>自动/手动，mount-a命令执行时，是否会自动安装/etc/fstab文件内容挂载，默认为自动</td>
+</tr>
+<tr>
+<td>defaults</td>
+<td>定义默认值，相当于rw,suid,dev,exec,auto,nouser,async这七个选项</td>
+</tr>
+<tr>
+<td>exec/noexec</td>
+<td>执行/不执行，设定是否允许在文件系统中执行可执行文件，默认是exec允许</td>
+</tr>
+<tr>
+<td>remount</td>
+<td>重新挂载已经挂载的文件系统，一般用于指定修改特殊权限</td>
+</tr>
+<tr>
+<td>rw/ro</td>
+<td>读写/只读，文件系统挂载时，是否具有读写权限，默认是rw</td>
+</tr>
+<tr>
+<td>suid/nosuid</td>
+<td>具有不具有SUD权限，设定文件系统是否具有SUID和SGD的权限，默认是具有</td>
+</tr>
+<tr>
+<td>user/nouser</td>
+<td>允许不允许普通用户挂载，设定文件系统是否允许普通用户挂载，默认是不允许，只有root可以挂载分区</td>
+</tr>
+<tr>
+<td>usrquota</td>
+<td>写入代表文件系统支持用户磁盘配额，默认不支持</td>
+</tr>
+<tr>
+<td>grpquota</td>
+<td>写入代表文件系统支持组磁盘配额，默认不支持</td>
+</tr>
+</tbody>
+</table>
+<p>系统创建了/mnt和/mid分别挂载U盘和光盘</p>
+<p>挂载U盘
+<code v-pre>[root@localhost ~]# fdisk -l</code></p>
+<blockquote>
+<p>查看U盘设备文件名
+<code v-pre>[root@localhost ~]# mount -t vfat /dev/sdb /mnt/usb/</code>
+注意: Linux默认是不支持NTFS文件系统的</p>
+</blockquote>
+<p>修改linux的NTFS文件系统使其可访问
+第一种，重编内核重新加入NTFS
+第二种，使用第三方插件</p>
+</div></template>
+
+
