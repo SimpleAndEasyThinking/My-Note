@@ -130,7 +130,8 @@ export default defineUserConfig({
     sidebar: {
       "/md/linux/": genSidebarLinux(),
       "/md/framework/spring/": genSidebarSpring(),
-      "/md/java/": genSidebarJava(),
+      "/md/code/java/": genSidebarJava(),
+      "/md/code/Csharp/": genSidebarCsharp(),
       "/md/数据库/": genSidebarDb(),
     },
   }),
@@ -176,6 +177,7 @@ function genSidebarLinux() {
     },
   ];
 }
+//Spring目录
 function genSidebarSpring() {
   return [
     {
@@ -192,6 +194,17 @@ function genSidebarSpring() {
         "Spring_Cloud_Ribbon源码.md",
         "Spring_Cloud_Hystrix原理.md",
       ],
+    },
+  ];
+}
+//csharp的目录
+function genSidebarCsharp() {
+  return [
+    {
+      text: "Csharp",
+      collapsable: false,
+      sidebarDepth: 1,
+      children: ["csharp基础.md"],
     },
   ];
 }
