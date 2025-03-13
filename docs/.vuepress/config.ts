@@ -23,7 +23,7 @@ export default defineUserConfig({
           },
           {
             text: "C#",
-            prefix: "C_/",
+            prefix: "Csharp/",
             children: ["csharp基础.md"],
           },
         ],
