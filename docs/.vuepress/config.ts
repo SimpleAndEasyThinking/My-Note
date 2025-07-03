@@ -1,8 +1,10 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
+
 //插件
 import { copyrightPlugin } from "@vuepress/plugin-copyright";
+import { markdownMathPlugin } from "@vuepress/plugin-markdown-math";
 //import { catalogPlugin } from '@vuepress/plugin-catalog'
 
 export default defineUserConfig({
@@ -24,7 +26,12 @@ export default defineUserConfig({
           {
             text: "C#",
             prefix: "Csharp/",
-            children: ["csharp基础.md"],
+            children: [
+              "csharp基础学习路线.md",
+              "csharp基础.md",
+              "csharp值类型.md",
+              "csharp引用类型.md",
+            ],
           },
         ],
       },
@@ -47,14 +54,23 @@ export default defineUserConfig({
           "oracle优化",
         ],
       },
-      //linux 
+      //linux
       {
         text: "linux",
         prefix: "md/linux/",
         children: [
           {
             text: "基础知识",
-            children: ["基础知识.md","vi编辑器.md", "权限管理.md","文件系统管理.md","系统管理.md","备份与恢复.md","服务管理.md","日志管理.md"],
+            children: [
+              "基础知识.md",
+              "vi编辑器.md",
+              "权限管理.md",
+              "文件系统管理.md",
+              "系统管理.md",
+              "备份与恢复.md",
+              "服务管理.md",
+              "日志管理.md",
+            ],
           },
           {
             text: "linux软件",
@@ -62,7 +78,7 @@ export default defineUserConfig({
           },
           {
             text: "shell",
-            children: ["shell编程基础.md","shell编程.md"],
+            children: ["shell编程基础.md", "shell编程.md"],
           },
         ],
       },
@@ -109,7 +125,13 @@ export default defineUserConfig({
       {
         text: "数学",
         prefix: "md/math/",
-        children: [],
+        children: [
+          {
+            text: "linear algebra",
+            prefix: "linearAlgebra/",
+            children: ["笔记.md", "线性代数的本质.md"],
+          },
+        ],
       },
       //英语
       {
@@ -123,7 +145,11 @@ export default defineUserConfig({
         prefix: "md/music/",
         children: ["乐理基础.md"],
       },
-
+      {
+        text: "其他",
+        prefix: "md/other/",
+        children: ["欧陆哲学与英美哲学.md"],
+      },
       // 字符串 - 页面文件路径
       //"/bar/README.md",
     ],
@@ -147,6 +173,10 @@ export default defineUserConfig({
       triggerLength: 100,
       author: "null",
     }),
+    markdownMathPlugin({
+      // 可添加 KaTeX 渲染选项
+      
+    }),
   ],
 });
 
@@ -157,23 +187,19 @@ function genSidebarLinux() {
       text: "linux系统",
       collapsable: false,
       sidebarDepth: 1,
-      children: ["基础知识.md", "权限管理.md", ],
+      children: ["基础知识.md", "权限管理.md"],
     },
     {
       text: "linux工具",
       collapsable: false,
       sidebarDepth: 1,
-      children: [
-        "vi编辑器.md",
-      ],
+      children: ["vi编辑器.md"],
     },
     {
       text: "shell编程",
       collapsable: false,
       sidebarDepth: 1,
-      children: [
-        "shell编程基础.md","shell编程.md",
-      ],
+      children: ["shell编程基础.md", "shell编程.md"],
     },
   ];
 }

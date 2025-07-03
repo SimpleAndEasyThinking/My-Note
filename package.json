@@ -18,6 +18,8 @@
     "vuepress": "^2.0.0-rc.19"
   },
   "dependencies": {
+    "@vuepress/plugin-markdown-math": "^2.0.0-rc.86",
+    "katex": "^0.16.0",
     "vuepress-plugin-copyright": "^1.0.2"
   }
 }
