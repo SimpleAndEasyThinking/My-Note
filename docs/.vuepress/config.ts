@@ -131,6 +131,11 @@ export default defineUserConfig({
             prefix: "linearAlgebra/",
             children: ["笔记.md", "线性代数的本质.md"],
           },
+          {
+            text: "higher ",
+            prefix: "higher/",
+            children: ["高等数学一.md"],
+          },
         ],
       },
       //英语
