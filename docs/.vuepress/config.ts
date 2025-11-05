@@ -31,6 +31,7 @@ export default defineUserConfig({
               "csharp基础.md",
               "csharp值类型.md",
               "csharp引用类型.md",
+              "csharp引用类型.md",
             ],
           },
         ],
