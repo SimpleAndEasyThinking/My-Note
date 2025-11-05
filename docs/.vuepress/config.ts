@@ -132,7 +132,7 @@ export default defineUserConfig({
             children: ["笔记.md", "线性代数的本质.md"],
           },
           {
-            text: "higher ",
+            text: "higher",
             prefix: "higher/",
             children: ["高等数学一.md"],
           },
