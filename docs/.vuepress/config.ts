@@ -113,7 +113,7 @@ export default defineUserConfig({
       {
         text: "计算机基础",
         prefix: "md/computer/",
-        children: ["操作系统基础.md"],
+        children: ["操作系统基础.md","软件设计.md"],
       },
       //电气
       {
