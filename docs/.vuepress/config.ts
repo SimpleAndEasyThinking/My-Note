@@ -113,7 +113,7 @@ export default defineUserConfig({
       {
         text: "计算机基础",
         prefix: "md/computer/",
-        children: ["操作系统基础.md"],
+        children: ["操作系统基础.md","软件设计.md"],
       },
       //电气
       {
@@ -130,6 +130,11 @@ export default defineUserConfig({
             text: "linear algebra",
             prefix: "linearAlgebra/",
             children: ["笔记.md", "线性代数的本质.md"],
+          },
+          {
+            text: "higher",
+            prefix: "higher/",
+            children: ["高等数学一.md"],
           },
         ],
       },
