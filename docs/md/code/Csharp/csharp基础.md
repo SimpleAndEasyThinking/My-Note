@@ -180,7 +180,7 @@ C# 是一种强类型语言
 
 > 编译时类型和运行时类型,编译时类型是源代码中变量的声明或推断类型。 运行时类型是该变量所引用的实例的类型。
 
-![alt text](images/csharp基础/image.png)
+![alt text](./images/csharp基础/image.png)
 
 ### 命名空间
 

@@ -3,7 +3,7 @@
 Spring Cloud 中定义了 **LoadBalancerClient** 作为负载均衡器的通用接口并且针对 Ribbon 实现了**RibbonLoadBalancerClient**，但是它在具体实现客户端负载均衡时，是通过 Ribbon 的 ILoadBalancer 接口实现的。
 
 ## ILoadBalancer接口
-![alt text](image/custom-image-1.png)
+![alt text](./image/custom-image-1.png)
 ### AbstractLoadBalancer抽象类
 AbstractLoadBalancer是ILoadBalancer接口的抽象实现。
 ```java

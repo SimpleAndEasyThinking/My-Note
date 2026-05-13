@@ -4,7 +4,7 @@
 
 ## 工作流程
 
-![alt text](image/custom-image.png)
+![alt text](./image/custom-image.png)
 
 ### 1.创建HystrixCommand或HystrixObservableCommand对象
 
@@ -360,7 +360,7 @@ public void markSuccess(){
 }
 ```
 
-![alt text](image/custom-image-2.png)
+![alt text](./image/custom-image-2.png)
 
 ## 依赖隔离(舱壁模式)
 

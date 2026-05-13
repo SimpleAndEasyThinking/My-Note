@@ -48,10 +48,10 @@ export default defineUserConfig({
         children: [
           {
             text: "sql基础",
-            children: ["SQL.md", "函数、存储过程和视图"],
+            children: ["SQL.md", "函数、存储过程和视图.md"],
           },
-          "ElasticSearch",
-          "oracle优化",
+          "ElasticSearch.md",
+          "oracle优化.md",
         ],
       },
       //linux
@@ -163,7 +163,7 @@ export default defineUserConfig({
       "/md/framework/spring/": genSidebarSpring(),
       "/md/code/java/": genSidebarJava(),
       "/md/code/Csharp/": genSidebarCsharp(),
-      "/md/数据库/": genSidebarDb(),
+      "/md/db/": genSidebarDb(),
     },
   }),
   port: 3000,
