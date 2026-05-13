@@ -134,7 +134,7 @@ export default defineUserConfig({
           {
             text: "higher",
             prefix: "higher/",
-            children: ["高等数学一.md"],
+            children: ["函数、极限、连续和导数.md"],
           },
         ],
       },
