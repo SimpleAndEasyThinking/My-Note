@@ -24,7 +24,7 @@
 
 spring框架采用分层结构，它一系列的功能要素被分成20个模块
 
-![1733473087799](image/Spring基础/1733473087799.png)
+![1733473087799](./image/Spring基础/1733473087799.png)
 
 Beans：提供了BeanFactory，spring将管理对象称为Bean
 
@@ -52,9 +52,9 @@ web：提供了基本的Web开发集成特性，如:多文件上传、使用Serv
 
 Spring 容器负责将被依赖对象赋值给调用者的成员变量，这相当于为调用者注入了它依赖的实例，这就是Spring的依赖注入。
 
-![1733473289430](image/Spring基础/1733473289430.png)
+![1733473289430](./image/Spring基础/1733473289430.png)
 
-![1733473293970](image/Spring基础/1733473293970.png)
+![1733473293970](./image/Spring基础/1733473293970.png)
 
 实现方式
 
@@ -87,43 +87,41 @@ Bean是IoC的基本类型
 
 在额外创建工厂类，通过工厂方法静态的实例化类
 
-![]()
 
 1. 实例工厂方式实例化
 
 首先实例化工厂，然后通过工厂实例化类
 
-![]()
 
 ### Bean的配置
 
 主要使用XML和Properties两种格式的配置文件，一般使用XML，通过它来注册和管理Bean之间的依赖关系。
 
-![1733473814679](image/Spring基础/1733473814679.png)
+![1733473814679](./image/Spring基础/1733473814679.png)
 
 Bean的生命周期
 
-![1733474429042](image/Spring基础/1733474429042.png)
+![1733474429042](./image/Spring基础/1733474429042.png)
 
 创建Bean
 
-![1733474436000](image/Spring基础/1733474436000.png)
+![1733474436000](./image/Spring基础/1733474436000.png)
 
 bean的作用域
 
-![1733473836013](image/Spring基础/1733473836013.png)
+![1733473836013](./image/Spring基础/1733473836013.png)
 
 Bean设置
 
 XML装配
 
-![1733474384602](image/Spring基础/1733474384602.png)
+![1733474384602](./image/Spring基础/1733474384602.png)
 
 所有配置均在XML过于臃肿出现了注解
 
 Annotation的装配
 
-![1733474405167](image/Spring基础/1733474405167.png)
+![1733474405167](./image/Spring基础/1733474405167.png)
 
 # AOP
 
@@ -164,7 +162,7 @@ Spring 中的 AOP 代理默认就是使用 JDK 动态代理的方式来实现的
 
 ProxyFactoryBean是 FactoryBean 接口的实现类， FactoryBean 负责实例化一个Bean ，而ProxyFactoryBean 负责为其他 Bean 创建代理实例。
 
-![1733474825758](image/Spring基础/1733474825758.png)
+![1733474825758](./image/Spring基础/1733474825758.png)
 
 ```java
 public class MyAspectimplementsMethodlnterceptor {
@@ -188,7 +186,7 @@ public class MyAspectimplementsMethodlnterceptor {
 
 ### XML
 
-![1733475098144](image/Spring基础/1733475098144.png)
+![1733475098144](./image/Spring基础/1733475098144.png)
 
 
 Spring
@@ -226,9 +224,9 @@ expression=用于指导切入点关联的切入点表达式
 
 ### AspectJ的注解
 
-![1733475141798](image/Spring基础/1733475141798.png)
+![1733475141798](./image/Spring基础/1733475141798.png)
 
-![1733475163626](image/Spring基础/1733475163626.png)
+![1733475163626](./image/Spring基础/1733475163626.png)
 
 <!-指定需要扫描的包，使注解生效-〉
 
@@ -250,7 +248,7 @@ AOP的实现方式有三种：
 
 首先AOP是基于IOC的Bean加载来实现的，所以在InstantiationAwareBeanPostProcessor和 BeanPostProcessor 这两个接口实现
 
-![1733475501882](image/Spring基础/1733475501882.png)
+![1733475501882](./image/Spring基础/1733475501882.png)
 
 AopNamespaceHandler方法，用于解aop配置标签的解析,如下方法解析aop的xml元素（使用xml方式调用到这里）
 
@@ -340,7 +338,7 @@ public AopProxy createAopProxy(AdvisedSupport config) throws AopConfigException 
 
 动态代理：在程序运行期，创建目标对象的代理对象，并对目标对象中的方法进行功能性增强的一种技术.
 
-![1733475904365](image/Spring基础/1733475904365.png)
+![1733475904365](./image/Spring基础/1733475904365.png)
 
 Cglib是一个强大的、高性能的代码生成包，它广泛被许多AOP框架使用，为他们提供方法的拦截。
 
@@ -350,7 +348,7 @@ Cglib是一个强大的、高性能的代码生成包，它广泛被许多AOP框
 * cglib基于ASM字节码工具操作字节码（即动态生成代理，对方法进行增强）
 * SpringAOP基于cglib进行封装，实现cglib方式的动态代理
 
-![1733475928266](image/Spring基础/1733475928266.png)
+![1733475928266](./image/Spring基础/1733475928266.png)
 
 
 CglibAopProxy的getProxy方法

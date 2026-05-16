@@ -312,7 +312,7 @@ date
 /etc/bashrc
 
 **执行顺序**
-![alt text](images/shell编程/image-1.png)
+![alt text](./images/shell编程/image-1.png)
 
 **作用**
 `/etc/profile`是永久性的环境变量，是全局变量
