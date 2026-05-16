@@ -21,7 +21,7 @@ export default defineUserConfig({
           {
             text: "java",
             prefix: "java/",
-            children: ["服务架构.md", "线程.md", "HashMap类.md", "STL库.md"],
+            children: ["线程.md", "HashMap类.md", "STL库.md"],
           },
           {
             text: "C#",
@@ -50,8 +50,15 @@ export default defineUserConfig({
             text: "sql基础",
             children: ["SQL.md", "函数、存储过程和视图.md"],
           },
-          "ElasticSearch.md",
-          "oracle优化.md",
+          {
+            text: "ElasticSearch",
+            children: ["ElasticSearch.md",],
+          },
+          {
+            text: "oracle",
+            children: ["oracle优化.md",],
+          },
+
         ],
       },
       //linux
@@ -63,7 +70,6 @@ export default defineUserConfig({
             text: "基础知识",
             children: [
               "基础知识.md",
-              "vi编辑器.md",
               "权限管理.md",
               "文件系统管理.md",
               "系统管理.md",
@@ -74,7 +80,7 @@ export default defineUserConfig({
           },
           {
             text: "linux软件",
-            children: ["linux工具.md"],
+            children: ["vi编辑器.md", "linux工具.md"],
           },
           {
             text: "shell",
@@ -83,16 +89,17 @@ export default defineUserConfig({
         ],
       },
       //部署工具，开发工具等
-      {
-        text: "工具",
-        prefix: "md/devops/",
-        children: [],
-      },
+      // {
+      //   text: "工具",
+      //   prefix: "md/devops/",
+      //   children: [],
+      // },
       //框架，各种语言常用框架
       {
         text: "框架",
         prefix: "md/framework/",
         children: [
+          "服务架构.md", 
           {
             text: "Spring",
             prefix: "spring/",
@@ -113,7 +120,16 @@ export default defineUserConfig({
       {
         text: "计算机基础",
         prefix: "md/computer/",
-        children: ["操作系统基础.md","软件设计.md"],
+        children: [
+          {
+            text: "操作系统",
+            children: ["操作系统基础.md"],
+          },
+          {
+            text: "软件设计",
+            children: ["软件设计.md"],
+          },
+        ],
       },
       //电气
       {
@@ -142,7 +158,12 @@ export default defineUserConfig({
       {
         text: "英语",
         prefix: "md/english/",
-        children: [],
+        children: [
+          {
+            text: "英语基础语法",
+            children: ["十大句类.md","基本句型.md","句子成分.md"],
+          },
+        ],
       },
       //乐理
       {
@@ -180,7 +201,7 @@ export default defineUserConfig({
     }),
     markdownMathPlugin({
       // 可添加 KaTeX 渲染选项
-      
+
     }),
   ],
 });
@@ -232,10 +253,20 @@ function genSidebarSpring() {
 function genSidebarCsharp() {
   return [
     {
+      text: "学习路线",
+      collapsable: false,
+      sidebarDepth: 1,
+      children: ["csharp学习路线.md"],
+    },
+    {
       text: "Csharp",
       collapsable: false,
       sidebarDepth: 1,
-      children: ["csharp基础.md"],
+      children: [
+        "csharp基础.md"
+        ,"csharp值类型.md"
+        ,"csharp引用类型.md"
+      ],
     },
   ];
 }
@@ -266,6 +297,12 @@ function genSidebarDb() {
       collapsable: false,
       sidebarDepth: 1,
       children: ["ElasticSearch.md"],
+    },
+    {
+      text: "oracle",
+      collapsable: false,
+      sidebarDepth: 1,
+      children: ["oracle优化.md"],
     },
   ];
 }
