@@ -92,9 +92,9 @@ export default defineUserConfig({
       //   prefix: "md/devops/",
       //   children: [],
       // },
-      //框架，各种语言常用框架
+      //后端框架，各种语言常用框架
       {
-        text: "框架",
+        text: "后端框架",
         prefix: "md/framework/",
         children: [
           "服务架构.md", 
@@ -111,6 +111,18 @@ export default defineUserConfig({
               "Spring_Cloud_Ribbon源码.md",
               "Spring_Cloud_Hystrix原理.md",
             ],
+          },
+        ],
+      },
+      //前端框架，各种语言常用框架
+      {
+        text: "前端框架",
+        prefix: "md/frontend/",
+        children: [
+          {
+            text: "vue",
+            prefix: "vue/",
+            children: ["vue基础.md","compositionAPI.md", "组件化.md","路由和状态管理.md"],
           },
         ],
       },
@@ -182,6 +194,7 @@ export default defineUserConfig({
       "/md/code/java/": genSidebarJava(),
       "/md/code/Csharp/": genSidebarCsharp(),
       "/md/db/": genSidebarDb(),
+      "/md/frontend/vue/": genSidebarVue(),
     },
   }),
   port: 3000,
@@ -304,6 +317,17 @@ function genSidebarDb() {
       collapsable: false,
       sidebarDepth: 1,
       children: ["oracle优化.md"],
+    },
+  ];
+}
+// Java 侧边栏
+function genSidebarVue() {
+  return [
+    {
+      text: "vue",
+      collapsable: false,
+      sidebarDepth: 1,
+      children: ["vue基础.md","compositionAPI.md","组件化.md","路由和状态管理.md"],
     },
   ];
 }
