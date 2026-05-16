@@ -2,18 +2,16 @@ import { viteBundler } from "@vuepress/bundler-vite";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 
-//插件
+// 插件
 import { copyrightPlugin } from "@vuepress/plugin-copyright";
 import { markdownMathPlugin } from "@vuepress/plugin-markdown-math";
-//import { catalogPlugin } from '@vuepress/plugin-catalog'
+// import { catalogPlugin } from '@vuepress/plugin-catalog'
 
 export default defineUserConfig({
   bundler: viteBundler(),
   theme: defaultTheme({
     navbar: [
-      // NavbarLink
-      // NavbarGroup
-      //编程语言
+      // 编程语言
       {
         text: "编程",
         prefix: "md/code/",
@@ -35,13 +33,13 @@ export default defineUserConfig({
           },
         ],
       },
-      //算法合集
+      // 算法合集
       {
         text: "算法",
         prefix: "md/algorithm/",
         children: [],
       },
-      //数据库，关系型和非关系型
+      // 数据库
       {
         text: "数据库",
         prefix: "md/db/",
@@ -54,7 +52,7 @@ export default defineUserConfig({
           "oracle优化",
         ],
       },
-      //linux
+      // Linux
       {
         text: "linux",
         prefix: "md/linux/",
@@ -82,13 +80,13 @@ export default defineUserConfig({
           },
         ],
       },
-      //部署工具，开发工具等
+      // 工具
       {
         text: "工具",
         prefix: "md/devops/",
         children: [],
       },
-      //框架，各种语言常用框架
+      // 框架
       {
         text: "框架",
         prefix: "md/framework/",
@@ -109,19 +107,19 @@ export default defineUserConfig({
           },
         ],
       },
-      //计算机基础
+      // 计算机基础
       {
         text: "计算机基础",
         prefix: "md/computer/",
-        children: ["操作系统基础.md","软件设计.md"],
+        children: ["操作系统基础.md", "软件设计.md"],
       },
-      //电气
+      // 电气
       {
         text: "电气",
         prefix: "md/electric/",
         children: [],
       },
-      //数学
+      // 数学
       {
         text: "数学",
         prefix: "md/math/",
@@ -138,25 +136,24 @@ export default defineUserConfig({
           },
         ],
       },
-      //英语
+      // 英语
       {
         text: "英语",
         prefix: "md/english/",
         children: [],
       },
-      //乐理
+      // 乐理
       {
         text: "乐理",
         prefix: "md/music/",
         children: ["乐理基础.md"],
       },
+      // 其他
       {
         text: "其他",
         prefix: "md/other/",
         children: ["欧陆哲学与英美哲学.md"],
       },
-      // 字符串 - 页面文件路径
-      //"/bar/README.md",
     ],
     sidebar: {
       "/md/linux/": genSidebarLinux(),
@@ -173,19 +170,17 @@ export default defineUserConfig({
   description: "这是我的NOTE站点",
   plugins: [
     copyrightPlugin({
-      // options
       global: true,
       triggerLength: 100,
       author: "null",
     }),
     markdownMathPlugin({
       // 可添加 KaTeX 渲染选项
-      
     }),
   ],
 });
 
-// About page
+// Linux 侧边栏
 function genSidebarLinux() {
   return [
     {
@@ -208,7 +203,8 @@ function genSidebarLinux() {
     },
   ];
 }
-//Spring目录
+
+// Spring 侧边栏
 function genSidebarSpring() {
   return [
     {
@@ -228,7 +224,8 @@ function genSidebarSpring() {
     },
   ];
 }
-//csharp的目录
+
+// C# 侧边栏
 function genSidebarCsharp() {
   return [
     {
@@ -239,6 +236,8 @@ function genSidebarCsharp() {
     },
   ];
 }
+
+// Java 侧边栏
 function genSidebarJava() {
   return [
     {
@@ -253,6 +252,8 @@ function genSidebarJava() {
     },
   ];
 }
+
+// 数据库 侧边栏
 function genSidebarDb() {
   return [
     {
