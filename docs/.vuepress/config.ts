@@ -97,7 +97,7 @@ export default defineUserConfig({
         text: "后端框架",
         prefix: "md/framework/",
         children: [
-          "服务架构.md", 
+          "服务架构.md",
           {
             text: "Spring",
             prefix: "spring/",
@@ -122,7 +122,7 @@ export default defineUserConfig({
           {
             text: "vue",
             prefix: "vue/",
-            children: ["vue基础.md","compositionAPI.md", "组件化.md","路由和状态管理.md"],
+            children: ["vue基础.md", "compositionAPI.md", "组件化.md", "路由和状态管理.md"],
           },
         ],
       },
@@ -171,7 +171,9 @@ export default defineUserConfig({
         children: [
           {
             text: "英语基础语法",
-            children: ["十大句类.md","基本句型.md","句子成分.md"],
+            children: [
+              "十大词类.md","基本句型.md","句子成分.md"
+            ],
           },
         ],
       },
@@ -274,8 +276,8 @@ function genSidebarCsharp() {
       sidebarDepth: 1,
       children: [
         "csharp基础.md"
-        ,"csharp值类型.md"
-        ,"csharp引用类型.md"
+        , "csharp值类型.md"
+        , "csharp引用类型.md"
       ],
     },
   ];
@@ -327,7 +329,7 @@ function genSidebarVue() {
       text: "vue",
       collapsable: false,
       sidebarDepth: 1,
-      children: ["vue基础.md","compositionAPI.md","组件化.md","路由和状态管理.md"],
+      children: ["vue基础.md", "compositionAPI.md", "组件化.md", "路由和状态管理.md"],
     },
   ];
 }
